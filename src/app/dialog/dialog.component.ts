@@ -19,6 +19,7 @@ export class DialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public editData:any
     ,private dialogRef:MatDialogRef<DialogComponent>) { }
 
+  // Making fields necessary  
   ngOnInit(): void {
     this.productForm = this.formBuilder.group({
       productName:['',Validators.required],
@@ -27,9 +28,27 @@ export class DialogComponent implements OnInit {
       freshness : ['',Validators.required],
       price: ['',Validators.required],
       comment: ['',Validators.required]
-    })
+    });
+
+    // Patching all the values
+    if(this.editData){
+      this.productForm.controls['productName'].setValue(this.editData.productName);
+      this.productForm.controls['category'].setValue(this.editData.category);
+      this.productForm.controls['date'].setValue(this.editData.date);
+      this.productForm.controls['price'].setValue(this.editData.price);
+      this.productForm.controls['comment'].setValue(this.editData.comment);
+      this.productForm.controls['freshness'].setValue(this.editData.freshness);
+
+
+
+
+
+    }
+    console.log(this.editData);
+    
   }
 
+  // Action for Add Product Btn
   addProduct(){
     if(this.productForm.valid){
       this.api.postProduct(this.productForm.value)
