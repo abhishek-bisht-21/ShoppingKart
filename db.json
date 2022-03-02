@@ -1,32 +1,3 @@
 {
-  "productList": [
-    {
-      "productName": "Apple",
-      "category": "Fruits",
-      "date": "2022-03-01T18:30:00.000Z",
-      "freshness": "Brand New",
-      "price": 100,
-      "comment": "nice",
-      "id": 1
-    },
-    {
-      "productName": "Samsung M30",
-      "category": "Electronics",
-      "date": "2022-03-01T18:30:00.000Z",
-      "freshness": "Brand New",
-      "price": 15000,
-      "comment": "Very Nice Prod",
-      "id": 4
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+
 }
