@@ -26,6 +26,15 @@
       "price": 10,
       "comment": "Old",
       "id": 3
+    },
+    {
+      "productName": "Samsung M30",
+      "category": "Electronics",
+      "date": "2022-03-01T18:30:00.000Z",
+      "freshness": "Brand New",
+      "price": 15000,
+      "comment": "Very Nice Prod",
+      "id": 4
     }
   ],
   "comments": [
