@@ -31,7 +31,11 @@ export class AppComponent implements OnInit{
   openDialog() {
     this.dialog.open(DialogComponent, {
       width:'30%'
-    });
+    }).afterClosed().subscribe(val=>{
+      if(val === 'save'){
+        this.getAllProduct();
+      }
+    })
 }
 
   // Getting All products using api and present in a table.
@@ -54,6 +58,24 @@ export class AppComponent implements OnInit{
     this.dialog.open(DialogComponent,{
       width:"30%",
       data:row
+    }).afterClosed().subscribe(val => {
+      if(val === 'update'){
+        this.getAllProduct();
+      }
+    })
+  }
+
+  deleteProduct(id:number){
+    this.api.deleteProduct(id)
+    .subscribe({
+      next:(res) =>{
+        alert("Product Deleted Successfully")
+        this.getAllProduct()
+      },
+
+      error:(err) => {
+        alert("Error While Deleting Product Record")
+      }
     })
   }
 

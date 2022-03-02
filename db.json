@@ -10,24 +10,6 @@
       "id": 1
     },
     {
-      "productName": "pineapple",
-      "category": "Fruits",
-      "date": "2022-03-01T18:30:00.000Z",
-      "freshness": "Brand New",
-      "price": 50,
-      "comment": "dsasddds",
-      "id": 2
-    },
-    {
-      "productName": "Mango",
-      "category": "Fruits",
-      "date": "2022-03-01T18:30:00.000Z",
-      "freshness": "Second Hand",
-      "price": 10,
-      "comment": "Old",
-      "id": 3
-    },
-    {
       "productName": "Samsung M30",
       "category": "Electronics",
       "date": "2022-03-01T18:30:00.000Z",

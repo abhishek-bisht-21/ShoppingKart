@@ -52,7 +52,8 @@ export class DialogComponent implements OnInit {
 
   // Action for Add Product Btn
   addProduct(){
-    if(this.productForm.valid){
+    if(!this.editData){
+      if(this.productForm.valid){
       this.api.postProduct(this.productForm.value)
       .subscribe({
         next:(res)=>{
@@ -67,6 +68,24 @@ export class DialogComponent implements OnInit {
         }
       })
     }
+    }else{
+      this.updateProduct()
+    }
+  }
+
+  updateProduct(){
+    this.api.putProduct(this.productForm.value, this.editData.id)
+    .subscribe({
+      next:(res) => {
+        alert("Product Updated Successfully")
+        this.productForm.reset();
+        this.dialogRef.close('update')
+      },
+      error: (err) => {
+        alert("Error While Updating the Record")
+  
+      }
+    })
   }
 
 }
